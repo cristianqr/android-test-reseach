@@ -9,7 +9,12 @@ import static org.junit.Assert.*;
 @RunWith(RobolectricTestRunner.class)
 public class EmailValidatorTest {
     @Test
-    public void email_isValid() {
-        assertTrue(EmailValidator.isValidEmail("cristianqr@outlook.com"));
+    public void emailShouldHaveCorrectFormat() {
+        assertTrue(EmailValidator.isValidEmail("cristianqr@outlookcom"));
+    }
+
+    @Test
+    public void emailShouldHaveInvalidFormat() {
+        assertFalse(EmailValidator.isValidEmail("cristianqr@outlook"));
     }
 }
